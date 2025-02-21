@@ -9,7 +9,7 @@ const MovieSearch = () => {
     const fetchMovie = async () => {
         try {
             setError("");
-            const response = await axios.get(`http://localhost:5000/api/movie/${movieTitle}`);
+            const response = await axios.get(`http://www.omdbapi.com/?t=${movieTitle}&apikey=${OMDB_API_KEY}`);
             setMovie(response.data);
         } catch (err) {
             setError("Movie not found.");
